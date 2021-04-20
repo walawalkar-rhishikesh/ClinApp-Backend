@@ -1,0 +1,97 @@
+{
+  "name": "users",
+  "plural": "users",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "fname": {
+      "type": "string",
+      "required": true,
+      "trim": true
+    },
+    "lname": {
+      "type": "string",
+      "required": false,
+      "trim": true
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "trim": true,
+      "lowercase": true
+    },
+    "contact": {
+      "type": "string",
+      "required": false,
+      "trim": true
+    },
+    "address": {
+      "type": "string",
+      "required": false,
+      "trim": true
+    },
+    "zipcode": {
+      "type": "number",
+      "required": false,
+      "trim": true
+    },
+    "state": {
+      "type": "string",
+      "required": false,
+      "trim": true
+    },
+    "country": {
+      "type": "string",
+      "required": false
+    },
+    "utype": {
+      "type": "string",
+      "required": true,
+      "trim": true
+    },
+    "createdon": {
+      "type": "date",
+      "required": false
+    },
+    "createdby": {
+      "type": "string",
+      "required": true
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": false,
+      "default": true
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "updatedon": {
+      "type": "date",
+      "required": true
+    },
+    "googleId": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "patient_id": {
+      "type": "hasMany",
+      "model": "appointments",
+      "foreignKey": "patient_id"
+    },
+    "doctor_id": {
+      "type": "hasMany",
+      "model": "appointments",
+      "foreignKey": "doctor_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

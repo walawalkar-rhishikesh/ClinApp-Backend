@@ -1,0 +1,14 @@
+{
+  "clinappdb": {
+    "host": "",
+    "port": 0,
+    "url": "",
+    "database": "clinappdb",
+    "password": "",
+    "name": "clinappdb",
+    "user": "",
+    "useNewUrlParser": true,
+    "useUnifiedTopology": true,
+    "connector": "mongodb"
+  }
+}

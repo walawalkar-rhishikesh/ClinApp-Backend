@@ -1,0 +1,89 @@
+{
+  "name": "appointments",
+  "plural": "appointments",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "doctor_id": {
+      "type": "string",
+      "required": true
+    },
+    "patient_id": {
+      "type": "string",
+      "required": true
+    },
+    "appoinment_date": {
+      "type": "date",
+      "required": true
+    },
+    "checked_in_time": {
+      "type": "date",
+      "required": false
+    },
+    "start_time": {
+      "type": "date",
+      "required": false
+    },
+    "end_time": {
+      "type": "date",
+      "required": false
+    },
+    "isCancelled": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "status": {
+      "type": "string",
+      "default": "SCHEDULED", 
+      "required": true
+    },
+    "total_price": {
+      "type": "number",
+      "required": false
+    },
+    "payment_status": {
+      "type": "string",
+      "default": "PENDING",
+      "required": false
+    },
+    "payment_id": {
+      "type": "string",
+      "required": false
+    },
+    "payment_on": {
+      "type": "date",
+      "required": false
+    },
+    "service_type": {
+      "type": "string",
+      "required": false
+    },
+    "createdon": {
+      "type": "date",
+      "required": false
+    },
+    "updatedon": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "doctor_id": {
+      "type": "belongsTo",
+      "model": "users",
+      "foreignKey": "doctor_id"
+    },
+    "patient_id": {
+      "type": "belongsTo",
+      "model": "users",
+      "foreignKey": "patient_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
